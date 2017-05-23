@@ -1,0 +1,50 @@
+﻿Build started 23.05.2017 23:31:02.
+     1>Project "E:\Myc++\CharPolynomial\CharPolynomial\CharPolynomial.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         E:\Programs\VisualStudio2013\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Release\CharPolynomial.pch" /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         E:\Programs\VisualStudio2013\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Release\CharPolynomial.pch" /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt CharacteristicsPolynom.cpp CharPolynomial.cpp DetCalc.cpp FileReader.cpp Matrix.cpp
+         CharacteristicsPolynom.cpp
+     1>CharacteristicsPolynom.cpp(30): error C2144: syntax error : 'int' should be preceded by ')'
+     1>CharacteristicsPolynom.cpp(30): error C2059: syntax error : ')'
+     1>CharacteristicsPolynom.cpp(31): error C2143: syntax error : missing ';' before '{'
+     1>CharacteristicsPolynom.cpp(33): warning C4091: '' : ignored on left of 'double' when no variable is declared
+     1>CharacteristicsPolynom.cpp(33): error C2143: syntax error : missing ';' before '['
+     1>CharacteristicsPolynom.cpp(33): error C3409: empty attribute block is not allowed
+     1>CharacteristicsPolynom.cpp(33): error C2143: syntax error : missing ']' before ','
+     1>CharacteristicsPolynom.cpp(33): error C2143: syntax error : missing ';' before ','
+     1>CharacteristicsPolynom.cpp(30): error C3861: 'foreach': identifier not found
+     1>CharacteristicsPolynom.cpp(40): error C2065: 'c' : undeclared identifier
+     1>CharacteristicsPolynom.cpp(40): error C2228: left of '.Contains' must have class/struct/union
+                 type is 'unknown-type'
+     1>CharacteristicsPolynom.cpp(42): error C2065: 'tempMatrix' : undeclared identifier
+     1>CharacteristicsPolynom.cpp(42): error C2676: binary '[' : 'Matrix' does not define this operator or a conversion to a type acceptable to the predefined operator
+     1>CharacteristicsPolynom.cpp(44): error C2065: 'tempMatrix' : undeclared identifier
+     1>CharacteristicsPolynom.cpp(44): error C2228: left of '.GetLength' must have class/struct/union
+                 type is 'unknown-type'
+     1>CharacteristicsPolynom.cpp(53): error C2065: 'tempMatrix' : undeclared identifier
+     1>CharacteristicsPolynom.cpp(53): error C3861: 'DetRec': identifier not found
+     1>CharacteristicsPolynom.cpp(73): error C2062: type 'int' unexpected
+     1>CharacteristicsPolynom.cpp(74): warning C4091: '' : ignored on left of 'int' when no variable is declared
+     1>CharacteristicsPolynom.cpp(74): error C2143: syntax error : missing ';' before '['
+     1>CharacteristicsPolynom.cpp(74): error C2337: 'K' : attribute not found
+     1>CharacteristicsPolynom.cpp(74): error C2146: syntax error : missing ';' before identifier 'arr'
+     1>CharacteristicsPolynom.cpp(74): error C2065: 'arr' : undeclared identifier
+     1>CharacteristicsPolynom.cpp(85): error C2065: 'arr' : undeclared identifier
+     1>CharacteristicsPolynom.cpp(90): error C2065: 'arr' : undeclared identifier
+     1>CharacteristicsPolynom.cpp(93): error C2039: 'prev_permutation' : is not a member of 'std'
+     1>CharacteristicsPolynom.cpp(93): error C3861: 'prev_permutation': identifier not found
+     1>CharacteristicsPolynom.cpp(95): error C3867: 'std::vector<int [],std::allocator<_Ty>>::empty': function call missing argument list; use '&std::vector<int [],std::allocator<_Ty>>::empty' to create a pointer to member
+                 with
+                 [
+                     _Ty=int []
+                 ]
+         CharPolynomial.cpp
+         DetCalc.cpp
+         FileReader.cpp
+         Matrix.cpp
+     1>Done Building Project "E:\Myc++\CharPolynomial\CharPolynomial\CharPolynomial.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:02.62
