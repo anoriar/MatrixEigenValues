@@ -34,12 +34,6 @@ double Matrix::GetElem(int i, int j){
 		throw std::runtime_error(msg);
 	}
 		
-	
-	if (!matrix[i][j]){
-		string msg = "Value on position: " + std::to_string(i) + " " + std::to_string(j) + " not exists";
-		throw std::runtime_error(msg);
-	}
-	
 		
 	return this->matrix[i][j];
 }
