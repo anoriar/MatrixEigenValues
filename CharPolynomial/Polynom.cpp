@@ -206,13 +206,21 @@ void Polynom::CalcRealRoots()
 
 void Polynom::PrintPolynom(){
 	int deg = degree;
+	stringstream stream;
 	cout << "Characteristic polynomial:" << endl;
 	for (vector<double>::const_iterator it = coefs.end() - 1; it >= coefs.begin(); --it) {
-		if (deg == 0)
-			cout << *it;
-		else
-			cout << *it << "x^" << deg << " " << "+" << " ";
+		if (*it > 0 && it != coefs.end() - 1)
+			stream << "+";
+		if (*it != 0)
+			stream << fixed << setprecision(1) << *it;
+		if (deg != 0)
+			stream << "x";
+		if (deg > 1)
+			stream << "^" + to_string(deg);
+		
+		cout << stream.str();
 		deg--;
+		stream.str("");
 	}
 	cout << endl;
 }
@@ -221,7 +229,9 @@ void Polynom::PrintRoots(){
 	int count = 1;
 	cout << "Rational eigenvalues:" << endl;
 	for (vector<double>::iterator it = roots.begin(); it != roots.end(); ++it) {
-		cout <<"x_" << count << " " << "=" << " " << *it << endl;
+		if (*it == 0)
+			*it = abs(*it);
+		cout << "x_" << count << " " << "=" << " " << setprecision(3) << *it << endl;
 		count++;
 	}
 }

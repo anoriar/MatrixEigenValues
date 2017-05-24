@@ -17,5 +17,8 @@ using namespace std;
 #include <string>
 #include <vector>
 #include <algorithm> 
+#include <sstream> 
+#include <iomanip>
+#include <cmath>
 
 // TODO: reference additional headers your program requires here

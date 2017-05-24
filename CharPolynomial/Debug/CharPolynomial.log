@@ -1,9 +1,9 @@
-﻿Build started 24.05.2017 21:38:17.
+﻿Build started 24.05.2017 22:11:38.
      1>Project "E:\Myc++\MatrixEigenValues\CharPolynomial\CharPolynomial.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         E:\Programs\VisualStudio2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\CharPolynomial.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt DetCalc.cpp Matrix.cpp
-         Matrix.cpp
-         DetCalc.cpp
+         E:\Programs\VisualStudio2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\CharPolynomial.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Main.cpp Polynom.cpp
+         Polynom.cpp
+         Main.cpp
          Generating Code...
        Link:
          E:\Programs\VisualStudio2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\Myc++\MatrixEigenValues\Debug\CharPolynomial.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\Myc++\MatrixEigenValues\Debug\CharPolynomial.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\Myc++\MatrixEigenValues\Debug\CharPolynomial.lib" /MACHINE:X86 Debug\CharacteristicsPolynom.obj
@@ -13,9 +13,10 @@
          Debug\Matrix.obj
          Debug\Polynom.obj
          Debug\stdafx.obj
+         LINK : E:\Myc++\MatrixEigenValues\Debug\CharPolynomial.exe not found or not built by the last incremental link; performing full link
          CharPolynomial.vcxproj -> E:\Myc++\MatrixEigenValues\Debug\CharPolynomial.exe
      1>Done Building Project "E:\Myc++\MatrixEigenValues\CharPolynomial\CharPolynomial.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.54
+Time Elapsed 00:00:01.26
