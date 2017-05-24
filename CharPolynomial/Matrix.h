@@ -13,7 +13,8 @@ public:
 	void Matrix::Print();
 
 private:
-	double **matrix;
 	int size;
+	vector<vector<double>> matrix;
+	
 };
 

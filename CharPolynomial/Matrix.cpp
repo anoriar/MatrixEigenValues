@@ -5,9 +5,11 @@
 Matrix::Matrix(int size)
 {
 	this->size = size;
-	this->matrix = new double*[size];
+	matrix = vector<vector<double>>(size);
+
+	//this->matrix = new double*[size];
 	for (int i = 0; i < size; i++){
-		this->matrix[i] = new double[size];
+		matrix[i].resize(size);
 	}
 
 }
@@ -32,10 +34,12 @@ double Matrix::GetElem(int i, int j){
 		throw std::runtime_error(msg);
 	}
 		
-	if (matrix[i][j]){
+	
+	if (!matrix[i][j]){
 		string msg = "Value on position: " + std::to_string(i) + " " + std::to_string(j) + " not exists";
 		throw std::runtime_error(msg);
 	}
+	
 		
 	return this->matrix[i][j];
 }

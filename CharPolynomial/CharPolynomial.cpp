@@ -16,7 +16,6 @@ int main(int argc, char* argv[])
 		cout << "Hello world!" << endl;
 		FileReader filereader;
 		Matrix matrix = filereader.read_file(argv[1]);
-	
 		matrix.Print();
 		CharacteristicsPolynom charPol;
 		charPol.CalcCoefs(matrix);

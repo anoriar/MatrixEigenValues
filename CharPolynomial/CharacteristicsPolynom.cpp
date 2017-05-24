@@ -14,37 +14,38 @@ CharacteristicsPolynom::~CharacteristicsPolynom()
 
 
 void CharacteristicsPolynom::CalcCoefs(Matrix matrix){
-	int n = matrix.GetSize();
+	int matrixSize = matrix.GetSize();
+	int polySize = matrixSize + 1;
 	//double[] coefs = new double[n + 1];
 	int coefIndex = 0;
 
 	//  коэффициент свободного  члена
-	
-	coefs[coefIndex] = DetCalc::CalcDet(matrix);
+	coefs.push_back(DetCalc::CalcDet(matrix));
 
 	coefIndex++;
 
 	//расчет коээфициентов от n-1 степени до 1
-	for (int k = 1; k < n; k++)
+	for (int k = 1; k < matrixSize; k++)
 	{
 		double coef = 0.0;
-		vector<vector<int>> combinations = CalcCombinations(n, k);
+		vector<vector<int>> combinations = CalcCombinations(matrixSize, k);
 		for (std::vector<vector<int>>::iterator it = combinations.begin(); it != combinations.end(); ++it) {
 			vector<int> oneComb = *it;
 			/* std::cout << *it; ... */
 			//матрица, хранящая в себе подматрицы после вычеркивания столбцов и строк
-			Matrix tempMatrix = Matrix(n - k);
+			Matrix tempMatrix = Matrix(matrixSize - k);
 
 			int tempi = 0;
 			int tempj = 0;
-			for (int i = 0; i < n; i++)
+			for (int i = 0; i < matrixSize; i++)
 			{
-				for (int j = 0; j < n; j++)
+				for (int j = 0; j < matrixSize; j++)
 				{
-					if (std::find(oneComb.begin(), oneComb.end(), i + 1) != oneComb.end() &&
-						std::find(oneComb.begin(), oneComb.end(), j + 1) != oneComb.end())
+					if (std::find(oneComb.begin(), oneComb.end(), i) == oneComb.end() &&
+						std::find(oneComb.begin(), oneComb.end(), j) == oneComb.end())
 					{
-						tempMatrix.PutElem(i, j, matrix.GetElem(i, j));
+						
+						tempMatrix.PutElem(tempi, tempj, matrix.GetElem(i, j));
 						tempj++;
 						if (tempj == tempMatrix.GetSize())
 						{
@@ -55,32 +56,33 @@ void CharacteristicsPolynom::CalcCoefs(Matrix matrix){
 				}
 
 			}
+			tempMatrix.Print();
 			coef += DetCalc::CalcDet(tempMatrix);
 		}
 		//если степень у коэффициента нечетная, то нужно умножать на -1 коэффициент 
 		if (k % 2 != 0)
 			coef *= -1.0;
-		coefs[coefIndex] = coef;
+		coefs.push_back(coef);
 		coefIndex++;
 
 	}
 
 	//коэффициент у старшей степени 
-	if (n % 2 != 0)
-		coefs[coefIndex] = -1.0;
+	if (polySize % 2 != 0)
+		coefs.push_back(-1.0);
 	else
-		coefs[coefIndex] = 1.0;
-
+		coefs.push_back(1.0);
+	
 	for (std::vector<double>::iterator it = coefs.begin(); it != coefs.end(); ++it) {
-		 std::cout << *it;
+		 std::cout << *it << " ";
 	}
 
+	
 }
 
 vector<vector<int>> CharacteristicsPolynom::CalcCombinations(int N, int K){
 	vector<vector<int>> result;
-	vector<int> arr = { 1, 2, 3 };
-	result.push_back(arr);
+	vector<int> arr = vector<int>(K);
 
 	int index = 0;
 
