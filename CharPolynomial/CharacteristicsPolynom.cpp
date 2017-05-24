@@ -12,6 +12,7 @@ CharacteristicsPolynom::~CharacteristicsPolynom()
 {
 }
 
+
 void CharacteristicsPolynom::CalcCoefs(Matrix matrix){
 	int n = matrix.GetSize();
 	//double[] coefs = new double[n + 1];
@@ -27,22 +28,25 @@ void CharacteristicsPolynom::CalcCoefs(Matrix matrix){
 	for (int k = 1; k < n; k++)
 	{
 		double coef = 0.0;
-		
-		foreach(int[] c in Combinations(n, k))
-		{
+		vector<vector<int>> combinations = CalcCombinations(n, k);
+		for (std::vector<vector<int>>::iterator it = combinations.begin(); it != combinations.end(); ++it) {
+			vector<int> oneComb = *it;
+			/* std::cout << *it; ... */
 			//матрица, хранящая в себе подматрицы после вычеркивания столбцов и строк
-			double[, ] tempMatrix = new double[n - k, n - k];
+			Matrix tempMatrix = Matrix(n - k);
+
 			int tempi = 0;
 			int tempj = 0;
 			for (int i = 0; i < n; i++)
 			{
 				for (int j = 0; j < n; j++)
 				{
-					if (!c.Contains(i + 1) && !c.Contains(j + 1))
+					if (std::find(oneComb.begin(), oneComb.end(), i + 1) != oneComb.end() &&
+						std::find(oneComb.begin(), oneComb.end(), j + 1) != oneComb.end())
 					{
-						tempMatrix[tempi, tempj] = matrix[i, j];
+						tempMatrix.PutElem(i, j, matrix.GetElem(i, j));
 						tempj++;
-						if (tempj == tempMatrix.GetLength(0))
+						if (tempj == tempMatrix.GetSize())
 						{
 							tempi++;
 							tempj = 0;
@@ -51,7 +55,7 @@ void CharacteristicsPolynom::CalcCoefs(Matrix matrix){
 				}
 
 			}
-			coef += DetRec(tempMatrix);
+			coef += DetCalc::CalcDet(tempMatrix);
 		}
 		//если степень у коэффициента нечетная, то нужно умножать на -1 коэффициент 
 		if (k % 2 != 0)
@@ -67,11 +71,15 @@ void CharacteristicsPolynom::CalcCoefs(Matrix matrix){
 	else
 		coefs[coefIndex] = 1.0;
 
+	for (std::vector<double>::iterator it = coefs.begin(); it != coefs.end(); ++it) {
+		 std::cout << *it;
+	}
+
 }
 
-vector<int*> CharacteristicsPolynom::CalcCombinations(int N, int K){
-	vector<int*> result;
-	int arr[] = {1, 2, 3};
+vector<vector<int>> CharacteristicsPolynom::CalcCombinations(int N, int K){
+	vector<vector<int>> result;
+	vector<int> arr = { 1, 2, 3 };
 	result.push_back(arr);
 
 	int index = 0;

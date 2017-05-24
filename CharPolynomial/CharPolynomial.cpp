@@ -5,22 +5,7 @@
 #include "stdafx.h"
 #include "FileReader.h"
 #include "Matrix.h"
-
-
-
-
-void print_matrix(double** matrix){
-	int size = sizeof(matrix) / sizeof(matrix[0]);
-	for (int i = 0; i < size; i++)
-	{
-		for (int j = 0; j < size; j++)
-		{
-			cout << matrix[i][j] << " ";
-		}
-		cout << endl;
-	}
-}
-
+#include "CharacteristicsPolynom.h"
 
 int main(int argc, char* argv[])
 {
@@ -33,11 +18,12 @@ int main(int argc, char* argv[])
 		Matrix matrix = filereader.read_file(argv[1]);
 	
 		matrix.Print();
+		CharacteristicsPolynom charPol;
+		charPol.CalcCoefs(matrix);
 		return 0;
 	}
-	catch (char *e)
-	{
-		cout << "An exception occurred. Exception. " << e << '\n';
+	catch (const std::exception& e) {
+		std::cout << "Exception: " << e.what();
 	}
 	
 }

@@ -11,7 +11,7 @@ public:
 	CharacteristicsPolynom();
 	~CharacteristicsPolynom();
 	void CharacteristicsPolynom::CalcCoefs(Matrix matrix);
-	vector<int*> CharacteristicsPolynom::CalcCombinations(int N, int K);
+	vector<vector<int>> CharacteristicsPolynom::CalcCombinations(int N, int K);
 
 private:
 	vector<double> coefs;
