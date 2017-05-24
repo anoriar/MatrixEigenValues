@@ -1,4 +1,4 @@
-﻿Build started 24.05.2017 17:07:00.
+﻿Build started 24.05.2017 17:22:22.
      1>Project "E:\Myc++\CharPolynomial\CharPolynomial\CharPolynomial.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          E:\Programs\VisualStudio2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\CharPolynomial.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt CharacteristicsPolynom.cpp
@@ -15,4 +15,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.02
+Time Elapsed 00:00:01.90

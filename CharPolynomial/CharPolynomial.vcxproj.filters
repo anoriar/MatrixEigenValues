@@ -36,12 +36,12 @@
     <ClInclude Include="DetCalc.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Polynom.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CharPolynomial.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FileReader.cpp">
@@ -54,6 +54,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DetCalc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Polynom.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

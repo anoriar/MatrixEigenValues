@@ -5,6 +5,7 @@
 #include "stdafx.h"
 #include "FileReader.h"
 #include "Matrix.h"
+#include "Polynom.h"
 #include "CharacteristicsPolynom.h"
 
 int main(int argc, char* argv[])
@@ -17,8 +18,9 @@ int main(int argc, char* argv[])
 		FileReader filereader;
 		Matrix matrix = filereader.read_file(argv[1]);
 		matrix.Print();
-		CharacteristicsPolynom charPol;
-		charPol.CalcCoefs(matrix);
+		CharacteristicsPolynom charPol(matrix);
+		charPol.PrintPolynom();
+		charPol.PrintRoots();
 		return 0;
 	}
 	catch (const std::exception& e) {

@@ -2,11 +2,14 @@
 #include "CharacteristicsPolynom.h"
 
 
-CharacteristicsPolynom::CharacteristicsPolynom()
-{
-	
-}
 
+CharacteristicsPolynom::CharacteristicsPolynom(Matrix matrix)
+{
+	this->degree = matrix.GetSize();
+	CalcCoefs(matrix);
+	
+	CalcRealRoots();
+}
 
 CharacteristicsPolynom::~CharacteristicsPolynom()
 {
@@ -21,11 +24,10 @@ void CharacteristicsPolynom::CalcCoefs(Matrix matrix){
 
 	//  коэффициент свободного  члена
 	coefs.push_back(DetCalc::CalcDet(matrix));
-
 	coefIndex++;
-
+	int k = 1;
 	//расчет коээфициентов от n-1 степени до 1
-	for (int k = 1; k < matrixSize; k++)
+	for (k = 1; k < matrixSize; k++)
 	{
 		double coef = 0.0;
 		vector<vector<int>> combinations = CalcCombinations(matrixSize, k);
@@ -56,8 +58,8 @@ void CharacteristicsPolynom::CalcCoefs(Matrix matrix){
 				}
 
 			}
-			tempMatrix.Print();
 			coef += DetCalc::CalcDet(tempMatrix);
+			
 		}
 		//если степень у коэффициента нечетная, то нужно умножать на -1 коэффициент 
 		if (k % 2 != 0)
@@ -68,15 +70,10 @@ void CharacteristicsPolynom::CalcCoefs(Matrix matrix){
 	}
 
 	//коэффициент у старшей степени 
-	if (polySize % 2 != 0)
+	if (k % 2 != 0)
 		coefs.push_back(-1.0);
 	else
 		coefs.push_back(1.0);
-	
-	for (std::vector<double>::iterator it = coefs.begin(); it != coefs.end(); ++it) {
-		 std::cout << *it << " ";
-	}
-
 	
 }
 

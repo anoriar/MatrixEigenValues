@@ -3,17 +3,17 @@
 class Matrix;
 #include "DetCalc.h"
 class DetCalc;
+#include "Polynom.h"
+class Polynom;
 
 
-class CharacteristicsPolynom
+class CharacteristicsPolynom : public Polynom
 {
 public:
-	CharacteristicsPolynom();
+	CharacteristicsPolynom(Matrix matrix);
 	~CharacteristicsPolynom();
 	void CharacteristicsPolynom::CalcCoefs(Matrix matrix);
 	vector<vector<int>> CharacteristicsPolynom::CalcCombinations(int N, int K);
 
-private:
-	vector<double> coefs;
 };
 
